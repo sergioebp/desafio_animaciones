@@ -1,0 +1,156 @@
+* {
+    font-family: "Fugaz One", "Open Sans", sans-serif;
+}
+nav {
+    display: flex;
+    justify-content: space-between;
+    grid-area: nav;
+    background-color: lightgreen;
+    height: 4rem;
+}
+.logo {
+    display: flex;
+    align-items: center;
+    margin: 0 2vw;
+}
+.logo_menu {
+    display: flex;
+    align-items: center;
+    margin: 0 2vw;
+}
+.menu {
+    display: none;
+    justify-content: space-around;
+    align-items: center;
+    margin: 0 2vw;
+    gap: 4px;
+}
+main {
+    grid-area: main;
+    background-color:azure;
+    display: grid;
+    grid-template-columns: auto;
+    justify-content: space-around;
+}
+.card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    background-color: lightblue;
+    width: 20rem;
+    max-width: 90vw;
+    box-shadow: 0 0 4px black;
+    margin: 1rem 0;
+}
+.imagen {
+    width: 18rem;
+    max-width: 80vw;
+    height: 15rem;
+    max-height: 70vw;
+    margin-top: 1rem;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    filter: contrast(70%);
+    transition: filter 1s, transform 1s;
+}
+.imagen:hover {
+    filter: contrast(100%);
+    transform: scale(1.1);
+}
+.naranja {
+    background-image: url(../images/naranja.webp);
+}
+.manzana {
+    background-image: url(../images/manzana_roja.jpg);
+}
+.mango {
+    background-image: url(../images/mango.jpg);
+}
+.banana {
+    background-image: url(../images/banana.jpg);
+}
+.brocoli {
+    background-image: url(../images/brocoli.jpg);
+}
+.zanahoria {
+    background-image: url(../images/zanahoria.jpg);
+}
+.lechuga {
+    background-image: url(../images/lechuga.avif);
+}
+.pepino {
+    background-image: url(../images/pepino.webp);
+}
+.card button {
+    margin-bottom: 1rem;
+    color: white;
+    background-color: black;
+    border: none;
+    border-radius: 10%;
+    height: 3rem;
+    width: 7rem;
+}
+footer {
+    display: flex;
+    align-items: center;
+    text-align: center;
+    flex-direction: column;
+    grid-area: footer;
+    background-color: lightgreen;
+}
+.contenedor-grid {
+    display: grid;
+    grid-template-areas: 
+    "nav"
+    "main"
+    "footer";
+}
+@media (min-width: 576px) {
+    main {
+        grid-template-columns: auto auto;
+    }
+    .card {
+        max-width: 44vw;
+    }
+    .imagen {
+        max-width: 39vw;
+        max-height: 33vw;
+    }
+    .logo_menu {
+        display: none;
+    }
+    .menu {
+        display: flex;
+    }
+}
+@media (min-width: 992px) {
+    .contenedor-grid {
+        grid-template-columns: 12rem auto;
+        grid-template-areas: 
+        "nav main"
+        "footer footer";
+    }
+    nav {
+        flex-direction: column;
+        height: auto;
+        justify-content: start;
+    }
+    .menu {
+        flex-direction: column;
+    }
+    .logo {
+        justify-content: center;
+    }
+    main {
+        grid-template-columns: auto auto auto auto;
+    }
+    .card {
+        max-width: 18vw;
+    }
+    .imagen {
+        max-width: 16vw;
+        max-height: 13vw;
+    }
+}
